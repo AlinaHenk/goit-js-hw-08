@@ -1,0 +1,21 @@
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1128px;
+  height: 200px;
+}
+
+img {
+  height: 300px;
+  margin: 18px;
+}
+
+.item {
+  border-radius: 8px;
+  padding: 16px;
+  width: 392px;
+  height: 216px;
+  background: #f6f6fe;
+  margin-bottom: 24px;
+}
