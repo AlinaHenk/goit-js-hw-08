@@ -70,26 +70,29 @@ const listImages = images
     .map((image) => {
         const {preview,original,description} = image;
         return  `<li class="gallery-item">
-  <a class="gallery-link" href="${original}">
-    <img  class="gallery-image"
+    <a class="gallery-link" href="${original}">
+     <img  class="gallery-image"
       src="${preview}"
       data-source="${original}"
       alt="${description}"
     />
-  </a>
-</li>`;
+    </a>
+ </li>`;
     }
       )
     .join("");
 
 allImages.insertAdjacentHTML("beforeend", listImages);
 
-const colorPalette = document.querySelectorAll(".gallery-link");
-const colorPalett = document.querySelectorAll(".gallery-image");
-colorPalette.addEventListener("click", selectColor);
-colorPalett.addEventListener("click", selectColor);
+const imagePaletteLink = document.querySelector(".gallery");
+imagePaletteLink.addEventListener("click", selectImage);
 
-function selectColor(event) {
- 	//console.log("kiik", event.target);
-	event.preventDefault();
+function selectImage(event) {
+    event.preventDefault();
+    const clickedImage = event.target.dataset.source; 
+    if (clickedImage) {
+        const instance = basicLightbox
+            .create(`<img src="${clickedImage}" class = "large-image">`);
+        instance.show();
+    }
 }

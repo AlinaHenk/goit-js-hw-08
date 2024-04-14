@@ -1,21 +1,26 @@
 .gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 1128px;
+  display: grid;
+  width: 1440px;
+  height: 696px;
+  align-content: center;
+  grid-template-columns: 360px 360px 360px;
+  background: #fff;
+  gap: 24px;
+  padding: 24px;
+  margin-left: 156px;
+  margin-right: 156px;
+}
+
+.gallery-image {
+  width: 360px;
   height: 200px;
 }
 
-img {
-  height: 300px;
-  margin: 18px;
+.large-image {
+  width: 1112px;
+  height: 640px;
 }
 
-.item {
-  border-radius: 8px;
-  padding: 16px;
-  width: 392px;
-  height: 216px;
-  background: #f6f6fe;
-  margin-bottom: 24px;
+li {
+  display: inline-block;
 }
